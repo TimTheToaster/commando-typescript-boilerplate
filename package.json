@@ -7,7 +7,9 @@
   "dependencies": {
     "@types/node": "^14.14.10",
     "discord.js": "^12.2.0",
-    "discord.js-commando": "discordjs/Commando"
+    "discord.js-commando": "discordjs/Commando",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.3.4000"
   },
   "scripts": {
     "start": "ts-node src/index.ts"
