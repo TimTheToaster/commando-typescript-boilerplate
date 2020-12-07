@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "target": "es2019",
+    "skipLibCheck": true,
+    "rootDir": ".",
+    "outDir": "lib",
+    "esModuleInterop": true,
+    "sourceMap": true,
+  },
+  "types": [
+    "types"
+  ]
+}
