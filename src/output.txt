@@ -1,4 +1,0 @@
-
-> commando-typescript-boilerplate@1.0.0 start /home/lucifer/Documents/Coding/Active/startrek_bot/commando-typescript-boilerplate
-> ts-node src/index.ts
-
