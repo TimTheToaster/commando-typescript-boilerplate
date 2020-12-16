@@ -11,14 +11,29 @@ export default class Coin extends Command {
         {
           key: "bet",
           prompt: "How much do you want to bet?",
-          type: "integer"
+          type: "integer",
+          validate: bet => Number(bet) === 10
+        },
+        {
+          key: "choice",
+          prompt: "Heads or Tails?",
+          type: "string",
+          oneOf: ['heads', 'tails', 'h', 't']
         }
       ]
     });
   }
 
-  async run(message: CommandoMessage, { bet }) {
+  async run(message: CommandoMessage, { bet, choice }) {
     const result = Math.random() < 0.5 ? 'heads' : 'tails'
-    return message.say(`You bet ${bet}. It came up ${result}`)
+    choice = { h: 'heads', t: 'tails' }[choice.toLowerCase().slice(0, 1)]
+    message.say(`You bet ${bet}. It came up ${result}`)
+    if (choice.toLowerCase() === result) {
+      // TODO increase player balance
+      return message.say('YOU WON!!!')
+    } else {
+      // TODO decrease player balance
+      return message.say('BETTER LUCK NEXT TIME')
+    }
   }
 }
