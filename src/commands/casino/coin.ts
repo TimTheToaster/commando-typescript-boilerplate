@@ -26,7 +26,7 @@ export default class Coin extends Command {
 
   async run(message: CommandoMessage, { bet, choice }) {
     const result = Math.random() < 0.5 ? 'heads' : 'tails'
-    choice = ['heads', 'h'].includes(choice.toLowerCase()) ? 'heads' : 'tails'
+    choice = { h: 'heads', t: 'tails' }[choice.toLowerCase().slice(0, 1)]
     message.say(`You bet ${bet}. It came up ${result}`)
     if (choice.toLowerCase() === result) {
       // TODO increase player balance
